@@ -56,7 +56,8 @@ fun CustomTextField(
                 focusedLabelColor = MaterialTheme.colorScheme.onPrimary,
                 unfocusedLabelColor = MaterialTheme.colorScheme.onPrimary,
                 focusedTextColor = MaterialTheme.colorScheme.onPrimary,
-                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary
+                unfocusedTextColor = MaterialTheme.colorScheme.onPrimary,
+                cursorColor = MaterialTheme.colorScheme.onPrimary
             )
         )
 

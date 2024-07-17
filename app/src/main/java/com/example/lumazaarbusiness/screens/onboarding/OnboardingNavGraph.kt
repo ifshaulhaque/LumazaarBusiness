@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.lumazaarbusiness.screens.onboarding.main_screen.MainScreen
 import com.example.lumazaarbusiness.screens.onboarding.mobile_no_screen.MobileNoScreen
+import com.example.lumazaarbusiness.screens.onboarding.pin_screen.PinScreen
 
 @Composable
 fun OnboardingNavGraph(navController: NavHostController) {
@@ -23,6 +24,12 @@ fun OnboardingNavGraph(navController: NavHostController) {
             route = OnboardingRoute.MOBILE_NO_SCREEN
         ) {
             MobileNoScreen(navController = navController)
+        }
+
+        composable(
+            route = OnboardingRoute.PIN_SCREEN
+        ) {
+            PinScreen(navController = navController)
         }
     }
 }

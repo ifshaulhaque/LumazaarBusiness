@@ -6,4 +6,9 @@
     <string name="verify">"Verify"</string>
     <string name="mobile_no">"Mobile No"</string>
     <string name="invalid">"Invalid"</string>
+    <string name="incorrect_pin">"Incorrect Pin"</string>
+    <string name="pin_must_6_digit">"Pin must be of 6 digits"</string>
+    <string name="pin">"Pin"</string>
+    <string name="continue_text">"Continue"</string>
+    <string name="skip">"Skip"</string>
 </resources>

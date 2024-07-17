@@ -1,4 +1,4 @@
-package com.example.lumazaarbusiness.screens.onboarding.mobile_no_screen
+package com.example.lumazaarbusiness.screens.onboarding.pin_screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -19,18 +19,18 @@ import com.example.lumazaarbusiness.R
 import com.example.lumazaarbusiness.components.CustomButton
 import com.example.lumazaarbusiness.components.CustomTextField
 import com.example.lumazaarbusiness.components.OnboardingScreen
-import com.example.lumazaarbusiness.screens.onboarding.OnboardingRoute
 import com.example.lumazaarbusiness.ui.theme.LumazaarBusinessTheme
 
 @Composable
-fun MobileNoScreen(navController: NavController) {
-    var mobileNo by remember {
+fun PinScreen(navController: NavController) {
+    var pin by remember {
         mutableStateOf("")
     }
     var errorText by remember {
         mutableStateOf<String?>(null)
     }
-    val invalidText = stringResource(id = R.string.invalid)
+    val invalidText = stringResource(id = R.string.incorrect_pin)
+    val mustBe6Digit = stringResource(id = R.string.pin_must_6_digit)
 
     OnboardingScreen(
         image = R.drawable.auth_sticker
@@ -39,25 +39,23 @@ fun MobileNoScreen(navController: NavController) {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             CustomTextField(
-                value = mobileNo,
+                value = pin,
                 onValueChanged = {
-                    if (it.length == 10) errorText = null
-                    if (it.length <= 10) mobileNo = it
+                    if (it.length == 6) errorText = null
+                    if (it.length <= 6) pin = it
                 },
                 errorText = errorText,
-                label = stringResource(id = R.string.mobile_no),
+                label = stringResource(id = R.string.pin),
                 keyboardType = KeyboardType.Number,
                 modifier = Modifier.fillMaxWidth()
             )
 
             CustomButton(
                 modifier = Modifier.fillMaxWidth(),
-                text = stringResource(id = R.string.verify),
+                text = stringResource(id = R.string.continue_text),
                 onClick = {
-                    if (mobileNo.length != 10) {
-                        errorText = invalidText
-                    } else {
-                        navController.navigate(route = OnboardingRoute.PIN_SCREEN)
+                    if (pin.length != 6) {
+                        errorText = mustBe6Digit
                     }
                 }
             )
@@ -67,8 +65,8 @@ fun MobileNoScreen(navController: NavController) {
 
 @Composable
 @Preview(showBackground = true)
-fun MobileNoScreenPreview() {
+fun PinScreenPreview() {
     LumazaarBusinessTheme {
-        MobileNoScreen(navController = rememberNavController())
+        PinScreen(navController = rememberNavController())
     }
 }
