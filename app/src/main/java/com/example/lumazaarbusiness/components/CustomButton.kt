@@ -28,6 +28,7 @@ fun CustomButton(
     ) {
         Text(
             text = text,
+            fontSize = MaterialTheme.typography.titleMedium.fontSize,
             color = textColor
         )
     }
