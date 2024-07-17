@@ -55,7 +55,7 @@ fun OnboardingScreen(
                         color = MaterialTheme.colorScheme.onPrimaryContainer
                     )
                     .padding(
-                        bottom = 24.dp,
+                        bottom = 40.dp,
                         start = 24.dp,
                         end = 24.dp
                     )

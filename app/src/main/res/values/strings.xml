@@ -3,4 +3,7 @@
 
     <string name="login">"Login"</string>
     <string name="sign_up">"Sign Up"</string>
+    <string name="verify">"Verify"</string>
+    <string name="mobile_no">"Mobile No"</string>
+    <string name="invalid">"Invalid"</string>
 </resources>
