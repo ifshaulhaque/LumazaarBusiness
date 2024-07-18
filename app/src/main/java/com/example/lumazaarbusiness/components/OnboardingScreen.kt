@@ -2,9 +2,9 @@ package com.example.lumazaarbusiness.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -38,30 +38,27 @@ fun OnboardingScreen(
             modifier = Modifier.height(300.dp)
         )
 
-        Column(
-            verticalArrangement = Arrangement.Bottom,
-            modifier = Modifier.fillMaxSize()
+        Spacer(modifier = Modifier.weight(1f))
+
+        Icon(
+            painter = painterResource(id = R.drawable.wave),
+            contentDescription = "layer",
+            tint = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+                .padding(
+                    bottom = 40.dp,
+                    start = 24.dp,
+                    end = 24.dp
+                )
         ) {
-            Icon(
-                painter = painterResource(id = R.drawable.wave_haikei_1),
-                contentDescription = "layer",
-                tint = MaterialTheme.colorScheme.onPrimaryContainer
-            )
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-                    .padding(
-                        bottom = 40.dp,
-                        start = 24.dp,
-                        end = 24.dp
-                    )
-            ) {
-                content()
-            }
+            content()
         }
     }
 }
