@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.lumazaarbusiness.R
@@ -20,10 +21,14 @@ import com.example.lumazaarbusiness.components.CustomButton
 import com.example.lumazaarbusiness.components.CustomTextField
 import com.example.lumazaarbusiness.components.OnboardingScreen
 import com.example.lumazaarbusiness.screens.onboarding.OnboardingRoute
+import com.example.lumazaarbusiness.screens.onboarding.OnboardingViewModel
 import com.example.lumazaarbusiness.ui.theme.LumazaarBusinessTheme
 
 @Composable
-fun MobileNoScreen(navController: NavController) {
+fun MobileNoScreen(
+    navController: NavController,
+    onboardingViewModel: OnboardingViewModel? = hiltViewModel()
+) {
     var mobileNo by remember {
         mutableStateOf("")
     }
@@ -57,7 +62,8 @@ fun MobileNoScreen(navController: NavController) {
                     if (mobileNo.length != 10) {
                         errorText = invalidText
                     } else {
-                        navController.navigate(route = OnboardingRoute.PIN_SCREEN)
+//                        navController.navigate(route = OnboardingRoute.PIN_SCREEN)
+                        onboardingViewModel?.sendSMS(mobileNo, "This is your OTP : 9989")
                     }
                 }
             )
