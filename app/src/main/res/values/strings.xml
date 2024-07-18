@@ -4,6 +4,7 @@
     <string name="login">"Login"</string>
     <string name="sign_up">"Sign Up"</string>
     <string name="verify">"Verify"</string>
+    <string name="verifying">"Verifying"</string>
     <string name="mobile_no">"Mobile No"</string>
     <string name="invalid">"Invalid"</string>
     <string name="incorrect_pin">"Incorrect Pin"</string>
@@ -11,4 +12,5 @@
     <string name="pin">"Pin"</string>
     <string name="continue_text">"Continue"</string>
     <string name="skip">"Skip"</string>
+    <string name="send_sms">"Send SMS"</string>
 </resources>
