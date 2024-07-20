@@ -1,5 +1,7 @@
 package com.example.lumazaarbusiness.screens.onboarding.mobile_no_screen
 
+import android.Manifest
+import android.app.Activity
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,6 +27,7 @@ import com.example.lumazaarbusiness.R
 import com.example.lumazaarbusiness.components.CustomButton
 import com.example.lumazaarbusiness.components.CustomTextField
 import com.example.lumazaarbusiness.components.OnboardingScreen
+import com.example.lumazaarbusiness.components.PermissionsHandler
 import com.example.lumazaarbusiness.screens.onboarding.OnboardingRoute
 import com.example.lumazaarbusiness.screens.onboarding.OnboardingViewModel
 import com.example.lumazaarbusiness.ui.theme.LumazaarBusinessTheme
@@ -52,6 +55,16 @@ fun MobileNoScreen(
     var showVerifyingDialog by remember {
         mutableStateOf(false)
     }
+
+    PermissionsHandler(
+        permissions = listOf(Manifest.permission.READ_SMS, Manifest.permission.SEND_SMS),
+        rationale = stringResource(id = R.string.sms_rationale),
+        onAllPermissionsGranted = {},
+        onPermissionsDenied = {},
+        onDismissRationale = {
+            (context as Activity).finish()
+        }
+    )
 
     OnboardingScreen(
         image = R.drawable.auth_sticker

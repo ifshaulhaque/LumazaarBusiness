@@ -13,4 +13,9 @@
     <string name="continue_text">"Continue"</string>
     <string name="skip">"Skip"</string>
     <string name="send_sms">"Send SMS"</string>
+    <string name="sms_rationale">"Sending SMS and Reading SMS permission Required to verify Phone Number"</string>
+    <string name="permission_required">"Permission Required"</string>
+    <string name="ok">"OK"</string>
+    <string name="no_thanks">"No Thanks"</string>
+    <string name="settings">"Settings"</string>
 </resources>
